@@ -1,0 +1,18 @@
+.App {
+  padding: 30px;
+  display: flex;
+}
+
+.App > div {
+  margin-right: 50px;
+}
+
+.btn_active{
+  background-color: rgb(94, 144, 65);
+  border: none;
+  border-radius: 4%;
+}
+
+.input_error{
+  border: 3px solid red;
+}
