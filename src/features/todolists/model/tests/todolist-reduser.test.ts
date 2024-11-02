@@ -1,12 +1,9 @@
 import { v1 } from "uuid";
-import { FilterValuesType, TodolistType } from "../App";
-import {
-  AddTodolist,
+import { FilterValuesType, TodolistType } from "../../../../app/App";
+import { AddTodolist,
   ChangeTodolistFilter,
   ChangeTodolistTitle,
-  RemoveTodolist,
-  todolistReducer,
-} from "./todolist-reduser";
+  RemoveTodolist,todolistReducer } from "../todolist-reduser";
 
 let todolistID1: string;
 let todolistID2: string;

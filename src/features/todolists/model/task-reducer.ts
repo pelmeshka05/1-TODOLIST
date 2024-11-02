@@ -1,6 +1,9 @@
 import { v1 } from "uuid";
-import { TaskType } from "../App";
+
 import { AddTodolistActionType, RemoveTodolistActionType } from "./todolist-reduser";
+
+import { log } from "console";
+import { TaskType } from "../../../app/App";
 
 
 export type InitialStateType = {
