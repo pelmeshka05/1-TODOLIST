@@ -3,7 +3,7 @@ import TextField from "@mui/material/TextField";
 import IconButton from "@mui/material/IconButton";
 import AddBoxIcon from '@mui/icons-material/AddBox';
 
-type AddItemForm = {
+export type AddItemForm = {
   addItem: (title: string) => void;
 };
 
@@ -13,8 +13,7 @@ const [taskTitle, setTaskTitle] = useState("");
 const [inputError, setInputError] = useState<string| null>(null);
 
   const maxTitleLenght = 15;
-  const addItemPossible =
-    taskTitle.length && taskTitle.length <= maxTitleLenght;
+  const addItemPossible = taskTitle.length && taskTitle.length <= maxTitleLenght;
 
   const addItemHandler = () => {
     if (taskTitle.trim() !== "") {
@@ -22,7 +21,6 @@ const [inputError, setInputError] = useState<string| null>(null);
       setTaskTitle("");
     } else {
       setInputError("Title is requared");
-      // setTimeout(() => setInputError(null), 3000);
     }
   };
 

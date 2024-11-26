@@ -11,7 +11,7 @@ import { EditableSpan } from '../../../../../../../common/components/EditableSpa
 
 
 
-type TaskPropsType = {
+export type TaskPropsType = {
     task: TaskType
     todolistID: string
 }

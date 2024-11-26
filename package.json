@@ -1,41 +1,55 @@
 {
-  "name": "1-lesson",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "@emotion/react": "^11.11.4",
-    "@emotion/styled": "^11.11.5",
-    "@mui/icons-material": "^5.15.18",
-    "@mui/material": "^5.15.18",
-    "@testing-library/jest-dom": "^5.16.5",
-    "@testing-library/react": "^13.4.0",
-    "@testing-library/user-event": "^13.5.0",
-    "@types/jest": "^27.5.2",
-    "@types/node": "^16.18.1",
-    "@types/react": "^18.0.23",
-    "@types/react-dom": "^18.0.7",
-    "@types/uuid": "^9.0.8",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-redux": "^9.1.2",
-    "react-scripts": "5.0.1",
-    "redux": "^5.0.1",
-    "styled-components": "^6.1.9",
-    "typescript": "^4.8.4",
-    "uuid": "^9.0.1",
-    "web-vitals": "^2.1.4"
-  },
+  "name": "1-todolist",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:pelmeshka05/1-TODOLIST.git",
+  "author": "arseniiOsovets <arsenasavets@gmail.com>",
+  "license": "MIT",
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "start": "concurrently \"yarn start-app\" \"yarn storybook\"",
+    "start-app": "react-scripts start",
+    "storybook": "storybook dev -p 9009",
+    "build-storybook": "storybook build",
+    "jest:integration": "jest -c integration/jest.config.js",
+    "test:integration": "start-server-and-test storybook http-get://localhost:9009 jest:integration"
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
+  "dependencies": {
+    "@emotion/react": "^11.13.3",
+    "@emotion/styled": "^11.13.0",
+    "@mui/icons-material": "^6.1.6",
+    "@mui/material": "^6.1.6",
+    "@types/uuid": "^10.0.0",
+    "addon-redux": "^2.0.11",
+    "axios": "^1.7.7",
+    "concurrently": "^9.1.0",
+    "jest-image-snapshot": "^6.4.0",
+    "jest-puppeteer": "^10.1.4",
+    "puppeteer": "^23.7.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-redux": "^9.1.2",
+    "react-scripts": "^5.0.1",
+    "redux": "^5.0.1",
+    "styled-components": "^6.1.13"
+  },
+  "devDependencies": {
+    "@chromatic-com/storybook": "^3.2.2",
+    "@storybook/addon-essentials": "^8.4.2",
+    "@storybook/addon-interactions": "^8.4.2",
+    "@storybook/addon-onboarding": "^8.4.2",
+    "@storybook/blocks": "^8.4.2",
+    "@storybook/preset-create-react-app": "^8.4.2",
+    "@storybook/react": "^8.4.2",
+    "@storybook/react-webpack5": "^8.4.2",
+    "@storybook/test": "^8.4.2",
+    "@types/jest": "^29.5.14",
+    "@types/react-dom": "^18.3.1",
+    "jest": "^29.7.0",
+    "jest-environment-puppeteer": "^10.1.4",
+    "prop-types": "^15.8.1",
+    "storybook": "^8.4.2",
+    "typescript": "^5.6.3",
+    "webpack": "^5.96.1"
   },
   "browserslist": {
     "production": [
@@ -48,8 +62,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "@babel/preset-typescript": "^7.24.7"
   }
 }

@@ -1,7 +1,7 @@
 import { CssBaseline, Paper, Switch } from "@mui/material";
 import { ThemeProvider } from "@mui/material/styles";
-import { useSelector } from "react-redux";
 import { ThemeMode } from "./app-reducer";
+
 import { getTheme } from "../common/theme/theme";
 import { AppRootStateType } from "./store";
 import { Header } from "../common/components/Header";
@@ -26,7 +26,7 @@ export type TodolistType = {
 
 export type FilterValuesType = "all" | "active" | "complited";
 
-function App() {
+export const App = () =>  {
  
   
   const themeMode = useAppSelector(state => state.app.themeMode)
@@ -40,4 +40,3 @@ function App() {
   );
 }
 
-export default App;
