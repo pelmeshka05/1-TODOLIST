@@ -1,12 +1,12 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { fn } from "@storybook/test";
-import { action } from "@storybook/addon-actions";
-
 import { Task } from "./Task";
 import { ReduxStoreProviderDecorator } from "../../../../../../../app/ReduxStoreProviderDecorator";
 import { Provider, useSelector } from "react-redux";
 import { AppRootStateType, store } from "../../../../../../../app/store";
-import { TaskType } from "../../../../../../../app/App";
+
+import { TaskDomainType } from "../../../../../model/task-reducer";
+import { TaskPriorities } from "../../../../../../../stories/todolist-task_api";
+
 
 
 const meta = {
@@ -34,11 +34,11 @@ export default meta;
 type Story = StoryObj<typeof Task>;
 
 const TaskStoryDop = () => {
-  let task = useSelector<AppRootStateType, TaskType>(
+  let task = useSelector<AppRootStateType, TaskDomainType>(
     state => state.tasks["todolistID1"][0]
   );
 
-  if(!task) task = {id:"121212", title:"DEFAULT TASK", isDone: false }
+  if(!task) task = {id:"121212", todoListId: "todolistID1" ,title:"DEFAULT TASK", isDone: false, status: "", description: "", deadline: "", addedDate:"", order: 0, startDate:"", priority: TaskPriorities.Low }
 
     return <Task task={task} todolistID={"todolistID1"}/>
   

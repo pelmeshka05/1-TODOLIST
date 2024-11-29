@@ -22,6 +22,7 @@
     "addon-redux": "^2.0.11",
     "axios": "^1.7.7",
     "concurrently": "^9.1.0",
+    "dotenv": "^16.4.5",
     "jest-image-snapshot": "^6.4.0",
     "jest-puppeteer": "^10.1.4",
     "puppeteer": "^23.7.1",

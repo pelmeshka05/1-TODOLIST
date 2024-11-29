@@ -1,7 +1,6 @@
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
 import React, { useCallback } from "react";
-import { useDispatch, useSelector } from "react-redux";
 import { AddTodolist } from "../features/todolists/model/todolist-reduser";
 import { AddItemForm } from "../common/components/AddItemForm";
 import { Todolists } from "../features/todolists/ui/Todolists/AllTodolists";

@@ -2,8 +2,8 @@
 import React, { useCallback } from 'react';
 import { useDispatch } from 'react-redux';
 import styled from 'styled-components';
-import { ChangeTodolistFilter } from '../../../../model/todolist-reduser';
-import { FilterValuesType } from '../../../../../../app/App';
+import { ChangeTodolistFilter, FilterValuesType } from '../../../../model/todolist-reduser';
+
 import { PropsToDOList } from '../Todolist';
 import { ButtonWithMemo } from '../../../../../../common/components/ButtonWithMemo';
 

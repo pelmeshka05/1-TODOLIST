@@ -3,11 +3,15 @@ import { v1 } from "uuid";
 import { AddTodolistActionType, RemoveTodolistActionType } from "./todolist-reduser";
 
 import { log } from "console";
-import { TaskType } from "../../../app/App";
+import { TaskPriorities, TaskType } from "../../../stories/todolist-task_api";
 
+
+export type TaskDomainType =  TaskType & {
+  isDone: boolean;
+};
 
 export type InitialStateType = {
-  [key: string]: TaskType[];
+  [key: string]: TaskDomainType[];
 };
 
 export type RemoveTaskActionType = ReturnType<typeof removeTaskAC>
@@ -31,9 +35,17 @@ export const taskReducer = (
       }
     }
     case "ADD-TASK": {
-      const newObject: TaskType = {
+      const newObject: TaskDomainType = {
         id: v1(),
+        todoListId: action.payload.todolistID,
         title: action.payload.title,
+        status: "",
+        priority: TaskPriorities.Low,
+        startDate: "",
+        deadline: "",
+        order: 0,
+        addedDate: "",
+        description: "",
         isDone: false
       }
       return{

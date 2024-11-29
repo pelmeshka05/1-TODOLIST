@@ -4,15 +4,15 @@ import Checkbox from '@mui/material/Checkbox';
 import IconButton from '@mui/material/IconButton';
 import { Delete } from '@mui/icons-material';
 import { useDispatch } from 'react-redux';
-import { TaskType } from '../../../../../../../app/App';
-import { changeTaskStatusAC, changeTaskTitleAC, removeTaskAC } from '../../../../../model/task-reducer';
+import { changeTaskStatusAC, changeTaskTitleAC, removeTaskAC, TaskDomainType } from '../../../../../model/task-reducer';
 import { getListItemSX } from '../../../../../../../Todolist.styled';
 import { EditableSpan } from '../../../../../../../common/components/EditableSpan';
 
 
 
+
 export type TaskPropsType = {
-    task: TaskType
+    task: TaskDomainType
     todolistID: string
 }
 

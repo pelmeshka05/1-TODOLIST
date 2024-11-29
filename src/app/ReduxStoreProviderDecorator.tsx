@@ -8,6 +8,7 @@ import { todolistReducer } from '../features/todolists/model/todolist-reduser'
 import { v1 } from "uuid"
 import { AppRootStateType, store } from "./store"
 
+
 // const rootReducer = combineReducers({
 //     tasks: taskReducer,
 //     todolists: todolistReducer,
@@ -19,19 +20,19 @@ import { AppRootStateType, store } from "./store"
    
 //     tasks:{
 //         todolistID1: [
-//             {id: v1(), title: "HTML", isDone: true},
-//             {id: v1(), title: "CSS", isDone: false},
-//             {id: v1(), title: "JS", isDone: false},
+//             {id: v1(), title: "HTML", isDone: true, deadline: "", description: "", startDate: "", status:"", addedDate:"", priority: TaskPriorities.Low, order: 0, todoListId: ""},
+//             {id: v1(), title: "CSS", isDone:  false, deadline: "", description: "", startDate: "", status:"", addedDate:"", priority: TaskPriorities.Low, order: 0, todoListId: ""},
+//             {id: v1(), title: "JS", isDone: false,deadline: "", description: "", startDate: "", status:"", addedDate:"", priority: TaskPriorities.Low, order: 0, todoListId: ""},
 //         ],
 //         todolistID2: [
-//             {id: v1(), title: "Milk", isDone: true},
-//             {id: v1(), title: "React", isDone: false},
+//             {id: v1(), title: "Milk", isDone: true, deadline: "", description: "", startDate: "", status:"", addedDate:"", priority: TaskPriorities.Low, order: 0, todoListId: ""},
+//             {id: v1(), title: "React", isDone: false, deadline: "", description: "", startDate: "", status:"", addedDate:"", priority: TaskPriorities.Low, order: 0, todoListId: ""},
            
 //         ]
 //     }, 
 //     todolists:[
-//         {id:"todolistID1", title: "What to learn?", filter: "all"},
-//         {id:"todolistID2", title: "What to buy?", filter: "all"}
+//         {id:"todolistID1", title: "What to learn?", filter: "all", addedDate: "", order: 0},
+//         {id:"todolistID2", title: "What to buy?", filter: "all", addedDate: "", order: 0}
 //     ],
 //     app: { themeMode: "light"}
 // }

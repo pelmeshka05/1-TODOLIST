@@ -1,6 +1,16 @@
 import { useState } from "react";
 import { v1 } from "uuid";
-import { FilterValuesType, TodolistType } from "../../../app/App";
+import { TodolistType } from "../../../stories/todolist-task_api";
+
+
+
+export type FilterValuesType = "all" | "active" | "complited";
+
+export type TodolistDomainType =  TodolistType & {
+  filter: FilterValuesType;
+};
+
+
 
 
 export type RemoveTodolistActionType = {
@@ -36,19 +46,21 @@ export type ChangeTodolistFilterActionType = {
 
 type ActionType = RemoveTodolistActionType | AddTodolistActionType | ChangeTodolistActionType | ChangeTodolistFilterActionType
 
-let initialState: TodolistType[] = [];
+let initialState: TodolistDomainType[] = [];
 
-export const todolistReducer = (state:TodolistType[]=initialState , action: ActionType): TodolistType[] => {
+export const todolistReducer = (state:TodolistDomainType[]=initialState , action: ActionType): TodolistDomainType[] => {
     switch(action.type){
         case 'REMOVE-TODOLIST': {
             return state.filter(el => el.id !== action.payload.id)
         }
 
         case "ADD-TODOLIST": {   
-            const newTodolist: TodolistType = {
+            const newTodolist: TodolistDomainType = {
                 id: action.payload.todolistID,
                 title: action.payload.title,
                 filter: "all",
+                addedDate: "",
+                order: 0
               };
             return [...state, newTodolist]
         }
